@@ -23,6 +23,7 @@ class RenderModel {
   }
 
   init(filePath) {
+    this.destroy()
     // eslint-disable-next-line
     return new Promise(async resolve => {
       // 初始化场景
@@ -143,6 +144,22 @@ class RenderModel {
       this.container.clientWidth,
       this.container.clientHeight
     );
+  }
+
+  destroy() {
+    if (this.model && this.scene) {
+      this.scene.remove(this.model)
+      this.model = null
+    }
+    if (this.renderer) {
+      this.container.removeChild(this.renderer.domElement)
+    }
+    this.controls?.dispose()
+    this.camera = null
+    this.scene = null
+    this.renderer = null
+    this.controls = null
+    this.model = null
   }
 }
 
