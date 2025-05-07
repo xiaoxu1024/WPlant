@@ -67,6 +67,7 @@ class RenderModel {
 
   initControls() {
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
+    this.controls.enablePan = false; // 禁用所有平移（包括双指拖拽）
     this.controls.enableZoom = false; // 禁用鼠标滚轮缩放
     this.controls.enableDamping = true; // 启用阻尼效果（更平滑的交互）
     this.controls.dampingFactor = 0.25; // 阻尼系数
