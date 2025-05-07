@@ -1,16 +1,21 @@
 <template>
-  <div class="plant_view">
-    显示3D植物
-  </div>
+  <div class="plant_view"></div>
 </template>
 
 <script>
+import RenderMode from '@/core/renderModel.js'
 export default {
   name: 'plantView',
   data() {
     return {
     }
   },
+  async mounted() {
+    const model = new RenderMode('.plant_view')
+    // filePath: '/models/crab.glb',
+    const load = await model.init('/models/bunny.glb')
+    console.log('======model', model, load)
+  }
 }
 </script>
 

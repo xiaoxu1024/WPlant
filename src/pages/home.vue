@@ -1,19 +1,22 @@
 <template>
   <div class="home">
+    <!-- <ModelBar /> -->
     <PlantView />
-    <StatusPanel />
+    <!-- <StatusPanel /> -->
   </div>
 </template>
 
 <script>
+// import ModelBar from '@/components/modelBar.vue'
 import PlantView from '@/components/plantView.vue'
-import StatusPanel from '@/components/statusPanel.vue'
+// import StatusPanel from '@/components/statusPanel.vue'
 
 export default {
   name: 'homePage',
   components: {
+    // ModelBar,
     PlantView,
-    StatusPanel,
+    // StatusPanel,
   }
 }
 </script>
