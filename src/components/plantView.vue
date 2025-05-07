@@ -1,6 +1,6 @@
 <template>
   <div class="plant_view">
-    <ModelBar class="bar_view" @select="onSelect" />
+    <ModelBar class="bar_view" :curModel="curModel" @select="onSelect" />
     <div class="canvas_view">
       <div v-if="isLoading" class="loading"></div>
     </div>
@@ -50,10 +50,6 @@ export default {
   gap: 20px;
 }
 
-.bar_view {
-  width: 217px;
-}
-
 .canvas_view {
   flex: 1;
   width: 0;
@@ -76,11 +72,11 @@ export default {
 
 @keyframes ball-scale {
   0% {
-    transform: scale(0.1);
+    transform: translate(-50%, -50%) scale(0.1);
     opacity: 1;
   }
   100% {
-    transform: scale(1);
+    transform: translate(-50%, -50%) scale(1);
     opacity: 0;
   }
 }

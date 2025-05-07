@@ -4,6 +4,7 @@ import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
 import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader'
 import { STLLoader } from 'three/examples/jsm/loaders/STLLoader'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import basetool from '@/lib/basetool'
 
 class RenderModel {
   constructor(selector) {
@@ -125,8 +126,9 @@ class RenderModel {
 						break;
 				}
 
+        const isMobile = basetool.isMobile()
         // 设置相机位置
-				this.camera.position.set(0, 0, 2)
+				this.camera.position.set(0, 0, isMobile ? 4 : 2)
 				// 设置相机坐标系
 				this.camera.lookAt(0, 0, 0)
         // 将模型添加到场景中去
