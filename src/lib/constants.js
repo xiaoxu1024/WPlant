@@ -65,5 +65,13 @@ export const Models = [
     modelPath: '/models/neta.glb',
     desc: '这是一个可爱的哪吒的3D模型',
     size: '54.9 MB',
+  },
+  {
+    id: 6,
+    name: 'dog',
+    imageUrl: '/images/dog.png',
+    modelPath: '/models/dog.glb',
+    desc: '这是一个可爱的小狗的3D模型',
+    size: '9.85 MB',
   }
 ]
